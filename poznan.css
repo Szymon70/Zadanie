@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+main{
+    width: 90%;
+    max-width: 1000px;
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+    
+}
+header, footer{
+    background-color: black;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 2px blue;
+}
+
+li>a{
+     color: black;
+     text-decoration: none;
+}
+li>a:hover, footer>a:hover{
+    color: red;
+}
+footer>a{
+    text-decoration: none;
+    color: white;
+}
+li{
+    margin-left: 5%;
+}
+h3{
+    text-align: center;
+    text-shadow: 3px 2px 2px red;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;  
+    border: 5px ridge red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ukryty,.ukryty1,.ukryty2,.ukryty3,.ukryty4{
+    display: none;
+}
+
+.czytaj,.czytaj1,.czytaj2,.czytaj3,.czytaj4{
+    background-color: lightgray;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    cursor:pointer;
+    color: red;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+}
+.ratusz.show-more .ukryty{
+    display: inline;
+}
+.ratusz.show-more .dokument{
+    display: none;
+}
+.zamek.show-more1 .ukryty1{
+    display: inline;
+}
+.zamek.show-more1 .dokument1{
+    display: none;
+}
+.fara.show-more2 .ukryty2{
+    display: inline;
+}
+.fara.show-more2 .dokument2{
+    display: none;
+}
+.palac.show-more3 .ukryty3{
+    display: inline;
+}
+.palac.show-more3 .dokument3{
+    display: none;
+}
+.fort.show-more4 .ukryty4{
+    display: inline;
+}
+.fort.show-more4 .dokument4{
+    display: none;
+}
+
+body.dark{
+    background: #000;
+    color: #fff;
+}
+body.dark footer,
+body.dark header{
+    background: rgb(1, 1, 19);
+    color: #fff;
+}
+body.dark nav>ul>li>a{
+    text-shadow: #fff 2px 2px 2px;
+    color: white;
+}
+body.dark nav>ul>li>a:hover{
+    color :red;
+}
+.tryb{
+    background-color: #000;
+    border: 4px solid #fff;
+    border-radius: 50px;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    outline-width:5px ;
+    right: 5px;
+   
+}
+.switch{
+    background-color:grey;
+    border-radius:50% ;
+    display: block;
+    height: 35px;
+    width: 35px;
+    position: relative;
+    bottom: 1px;
+    margin-left: 4px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+body.dark .switch{
+    background: white;
+    transform: translateX(50px);
+
+}
+body.dark .switch::after{
+    content: '';
+    background-color: #000;
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: -2px;
+    top: 2px;
+
+}
+body.dark section, body.dark nav{
+    background-color: darkslategrey;
+}
+

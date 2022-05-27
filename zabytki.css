@@ -1,0 +1,365 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: coral;
+    overflow-x: hidden;
+    min-width:500px ;
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+header{
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 20px;
+    font-size: x-large;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center; 
+    height: 110px;   
+}
+
+
+button{
+    width: 40px;
+    height: 35px;
+    border: 0;
+    border-top:5px solid #fff;
+    background: transparent;
+    position: relative;
+    top: -15px;
+    transition: 0.3s transform linear;
+}
+button::before, button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top:5px solid #fff;
+}
+button::after{
+    transform: translateY(25px);
+    transition: 0.3s transform linear;
+}
+button::before{
+    transform: translateY(10px);
+}
+button:focus{
+    transform: rotate(45deg);
+    border: none;
+}
+button:focus::after{
+    transform: rotate(-90deg) translate(-10px);
+}
+
+
+.nawigacja{
+    display:flex ;
+    justify-content: flex-end;
+    padding: 5px;
+    background-color: black;
+    box-sizing: border-box;
+    height: 30px;
+    
+   
+    
+}
+.menuboczne{
+    box-sizing: border-box;
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    width: 300px;
+    background-color: green;
+    right: 0;
+    transform: translateX(100%);
+    transition: 0.5s transform linear;
+    z-index: 1;
+}
+ul{
+    padding: 0;
+    list-style-type: none;
+    margin:  10px;
+    
+}
+li{
+    background-color: lightgreen;
+    margin: 20px;
+    border-radius:5px ;
+    height: 30px;
+    width: 200px;
+    position: relative;  
+}
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+}
+a:hover{
+    background-color: darkgreen;
+    color: red;
+ }
+button:focus ~ .menuboczne{
+     transform: translateX(0);
+ }
+ .imie{
+    display: flex;
+    align-items: center;
+}
+.imie::after, .imie::before{
+    content: '';
+    display: block;
+    border: 1px solid white;
+    flex-grow: 1;
+    margin: 0 5px;
+}
+.nazwisko{
+    display: flex;
+    align-items: center;
+}
+.nazwisko::after, .nazwisko::before{
+    content: '';
+    display: block;
+    border: 1px solid white;
+    flex-grow: 1;
+    margin: 0 5px;
+}
+.ramka{
+    color: white;
+    position:relative;
+    text-align: center;
+    box-sizing: border-box ;
+    width: 180px;
+    height: 100px;
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;  
+    top: 5px;
+    
+}
+.ramka::before{
+    content: '';
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    width: 120px;
+    height: 5px;
+    left: 25px;
+    top: -5px;
+    background-color: black;
+    box-shadow: 0 98px 0 black;
+}
+.ramka::after{
+    content: '';
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    width: 5px;
+    height: 60px;
+    left: -5px;
+    top: 15px;
+    background-color: black;
+    box-shadow: 179px 0 0 black;
+    
+}
+
+
+
+
+.slider{
+    overflow:hidden;
+    height: 400px;
+    
+}
+.slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: slider 20s  infinite;
+}
+.slider figure img{
+    width: 20%;
+    float: left;
+    position: relative;
+    height: 400px;
+}
+
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+.animacja{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/Zabytki/img/sky.jpg);
+    background-size:cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+.droga{
+    height: 200px;
+    width: 500%;
+    display: block;
+    background-image: url(/Zabytki/img/road.jpg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:1 ;
+    animation: droga 5s linear infinite;
+}
+@keyframes droga{
+    100%{
+        transform: translateX(-3400px);
+    }
+}
+.miasto{
+    height: 250px;
+    width: 500%;
+    background-image: url(/Zabytki/img/city.png);
+    bottom: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: miasto 20s linear infinite;
+}
+@keyframes miasto{
+    100%{
+        transform: translateX(-1400px);
+    }
+}
+.auto{
+    width: 650px;
+    left: 50%;
+    bottom: 100px;
+    transform:translateX(-50%) ;
+    position: absolute;
+    z-index: 2;
+}
+.auto img{
+    width: 50%;
+    animation: aut 1s linear infinite;
+}
+@keyframes aut {
+    100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+}
+.kolo{
+    left: 50%;
+    bottom: 167px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+.kolo img{
+    width: 55px;
+    height: 55px;
+    animation: kolo 1s linear infinite;
+}
+.tylne{
+    left: -293px;
+    position: absolute;
+}
+.przodnie{
+    left: -95px;
+    position: absolute;
+}
+@keyframes kolo{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.tekst{
+    position: absolute;
+    top: 550px;
+    z-index: 2;
+    left: 210px;
+    font-size: 30px;
+    
+}
+.tekst2{
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    font-size: 20px;
+    z-index: 2;
+    color: red;
+    background-color: #fff;
+    border-radius: 20px;
+    
+}
+span{
+    animation: kolor 5s infinite;
+}
+@keyframes kolor{
+    0%{
+        color: #fff;
+    }
+    25%{
+        color:blue;
+    }
+    50%{
+        color:red;
+    }
+    75%{
+        color: yellow ;
+    }
+    100%{
+        color: green;
+    }
+}
+header img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 1px;
+}
